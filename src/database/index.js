@@ -1,12 +1,16 @@
-const { Pool } = require('pg');
+const { Client } = require('pg');
 
-const pool = new Pool({
-  connectionString: `${process.env.POSTGRES_URL}?sslmode=require`,
+const client = new Client({
+  host: 'localhost',
+  port: 5432,
+  user: 'root',
+  password: 'root',
+  database: 'mycontacts',
 });
 
-pool.connect();
+client.connect();
 
 exports.query = async (query, values) => {
-  const { rows } = await pool.query(query, values);
+  const { rows } = await client.query(query, values);
   return rows;
 };
