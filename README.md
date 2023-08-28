@@ -1,6 +1,6 @@
 # API MyContacts
 
-O projeto desta API consiste em uma API seguindo o padrão Rest e permite que seja feito todo o CRUD de contatos e de categorias.
+Este projeto consiste em uma API seguindo o padrão Rest e permite que seja feito todo o CRUD de contatos e de categorias.
 
 
 ## Documentação da API
@@ -122,8 +122,6 @@ $ yarn
 
 Crie um container com a imagem do PostgreSQL no docker
 ```bash
-$ docker pull postgres
-
 $ docker run --name pg -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -p 5432:5432 -d postgres
 ```
 
