@@ -1,11 +1,17 @@
+const dotenv = require('dotenv');
 const { Client } = require('pg');
 
+dotenv.config();
+
 const client = new Client({
-  host: 'localhost',
+  host: process.env.POSTGRES_HOST,
   port: 5432,
-  user: 'root',
-  password: 'root',
-  database: 'mycontacts',
+  user: process.env.POSTGRES_USER,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DATABASE,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 client.connect();
